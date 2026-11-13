@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
 <style>
 :root{
 --bg:#0a1628;--bg2:#122138;--card:rgba(26,42,68,.45);
@@ -35,7 +36,6 @@ section{padding:5rem 0;position:relative}
 .parallax::before{content:'';position:absolute;inset:0;background:rgba(10,22,40,.88);z-index:0}
 .parallax>*{position:relative;z-index:1}
 
-/* HEADER + HAMBURGER */
 header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,22,40,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .hdr{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
 .logo{font-family:'Space Grotesk';font-size:1.4rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:2px}
@@ -53,7 +53,6 @@ nav ul{position:fixed;top:64px;right:0;flex-direction:column;background:rgba(10,
 nav ul.show{transform:translateX(0)}
 }
 
-/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 4rem;background:radial-gradient(circle at 20% 40%,rgba(59,130,246,.12),transparent 55%),radial-gradient(circle at 80% 75%,rgba(6,182,212,.1),transparent 55%)}
 .hero-logo{width:110px;height:110px;margin:0 auto 1.8rem;border-radius:22px;overflow:hidden;box-shadow:0 12px 45px rgba(59,130,246,.35);border:1px solid var(--border)}
 .hero-logo img{width:100%;height:100%;object-fit:cover}
@@ -62,12 +61,10 @@ nav ul.show{transform:translateX(0)}
 .meta{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
 .meta b{display:block;color:var(--cyan);font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem}
 
-/* TÍTULOS DE SEÇÃO */
 .s-title{font-size:2.4rem;text-align:center;margin-bottom:.6rem;color:var(--txt)}
 .s-title span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .s-sub{text-align:center;color:var(--mut);margin-bottom:3rem;font-size:1.05rem}
 
-/* CARDS COM GLOW */
 .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.8rem;backdrop-filter:blur(8px);transition:border-color .35s,box-shadow .35s,transform .35s}
 .card:hover,.card:focus-within{border-color:var(--glow);box-shadow:0 0 22px rgba(59,130,246,.25),inset 0 0 12px rgba(59,130,246,.06);transform:translateY(-4px)}
 .grid{display:grid;gap:1.5rem}
@@ -80,7 +77,6 @@ nav ul.show{transform:translateX(0)}
 .card li{padding:.45rem 0 .45rem 1.6rem;position:relative;color:var(--mut);font-size:.92rem}
 .card li::before{content:'✓';position:absolute;left:0;color:var(--ok);font-weight:700}
 
-/* PACOTES */
 .pacote{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:14px;padding:2.2rem 1.8rem;background:rgba(10,22,40,.6);transition:.35s}
 .pacote:hover{border-color:var(--glow);box-shadow:0 0 28px rgba(59,130,246,.28);transform:translateY(-6px)}
 .pacote.destaque{border-color:var(--orange);background:rgba(249,115,22,.07)}
@@ -94,25 +90,21 @@ nav ul.show{transform:translateX(0)}
 .p-parc{color:var(--mut);font-size:.85rem;margin:.4rem 0 1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border)}
 .pacote ul{flex-grow:1}
 
-/* BOTÃO LARANJA */
 .btn-orange{display:block;width:100%;text-align:center;padding:1rem;border-radius:50px;background:var(--orange);color:#0a1628;font-weight:700;font-size:.95rem;text-decoration:none;transition:.3s;border:2px solid var(--orange)}
 .btn-orange:hover,.btn-orange:focus{background:var(--orange-h);box-shadow:0 0 24px rgba(249,115,22,.5);transform:translateY(-3px)}
 
-/* DIFERENCIAIS */
 .dif{text-align:center;padding:2rem 1.2rem;border:1px solid var(--border);border-radius:10px;background:var(--card);transition:.35s}
 .dif:hover{border-color:var(--glow);box-shadow:0 0 18px rgba(59,130,246,.22);transform:translateY(-4px)}
 .dif .ico{font-size:2.2rem;margin-bottom:.8rem}
 .dif h3{color:var(--cyan);margin-bottom:.4rem}
 .dif p{color:var(--mut);font-size:.88rem}
 
-/* TERMOS */
 .termos{max-width:820px;margin:0 auto;border:1px solid var(--border);border-radius:12px;padding:2.4rem;background:rgba(10,22,40,.55);transition:.35s}
 .termos:hover{border-color:var(--glow);box-shadow:0 0 20px rgba(59,130,246,.18)}
 .termos h3{color:var(--cyan);margin:1.4rem 0 .5rem;font-size:1.05rem}
 .termos h3:first-child{margin-top:0}
 .termos p{color:var(--mut);font-size:.92rem}
 
-/* CTA FINAL */
 .cta{text-align:center;background:radial-gradient(circle at 30% 50%,rgba(249,115,22,.1),transparent 55%),radial-gradient(circle at 70% 50%,rgba(59,130,246,.12),transparent 55%)}
 .cta h2{font-size:2.4rem;margin-bottom:.8rem}
 .cta p{color:var(--mut);margin-bottom:2rem;font-size:1.05rem}
@@ -121,7 +113,6 @@ nav ul.show{transform:translateX(0)}
 
 footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color:var(--mut);font-size:.88rem}
 
-/* ANIMAÇÕES */
 .an{opacity:0;transform:translateY(30px);transition:all .8s ease}
 .an.left{transform:translateX(-50px)}
 .an.right{transform:translateX(50px)}
@@ -130,11 +121,6 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color
 </style>
 </head>
 <body>
-  <div class="ressonancia an zoom">
-    <a href="/Sites_com_alta_conversão_e_blindagem_jurídica.m4a" class="btn-glass" target="_blank" rel="noopener">
-        ▶ Ouvir resumo da proposta (1m41s)
-    </a>
-  </div>
 
 <header>
 <div class="container hdr">
@@ -163,6 +149,12 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color
 </div>
 </section>
 
+<div class="ressonancia an zoom">
+    <a href="/Sites_com_alta_conversão_e_blindagem_jurídica.m4a" class="btn-glass" target="_blank" rel="noopener">
+        ▶ Ouvir resumo da proposta (1m41s)
+    </a>
+</div>
+
 <section id="diag" class="parallax">
 <div class="container">
 <h2 class="s-title an">Diagnóstico <span>Estratégico</span></h2>
@@ -178,7 +170,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color
 
 <section id="cons">
 <div class="container">
-<h2 class="s-title an">Consultoria <span>Stratégica Inclusa</span></h2>
+<h2 class="s-title an">Consultoria <span>Estratégica Inclusa</span></h2>
 <p class="s-sub an">Orientações cruciais para proteger seu investimento</p>
 <div class="grid g3">
 <div class="card an zoom"><h3>🛡️ Blindagem de Marca</h3><ul><li>Orientação sobre registro de domínio seguro</li><li>Evitar uso de marcas de terceiros</li><li>Posicionamento como "Parceiro Autorizado"</li><li>Proteção contra notificações extrajudiciais</li></ul></div>
