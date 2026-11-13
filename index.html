@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta de Desenvolvimento | SIDMARKTING</title>
-    <link rel="icon" type="image/png" href="/favicon-mark.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta de Desenvolvimento | SIDMARKTING</title>
+<link rel="icon" type="image/png" href="/favicon-mark.png">
 <link rel="shortcut icon" type="image/png" href="/favicon-mark.png">
 <link rel="apple-touch-icon" href="/favicon-mark.png">
-    <!-- OPEN GRAPH - Facebook, WhatsApp, Instagram, Threads -->
 <meta property="og:title" content="Proposta de Desenvolvimento | SIDMARKTING">
 <meta property="og:description" content="Estrutura profissional de alta performance para conversão e escalabilidade digital.">
 <meta property="og:image" content="/favicon-mark.png">
@@ -15,929 +14,288 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0a1628">
-    <style>
-        :root {
-            --primary: #0a1628;
-            --secondary: #1a2a44;
-            --accent: #3b82f6;
-            --accent-light: #60a5fa;
-            --metallic: #94a3b8;
-            --text: #e2e8f0;
-            --text-muted: #94a3b8;
-            --border: rgba(148, 163, 184, 0.2);
-            --border-active: rgba(59, 130, 246, 0.5);
-            --success: #10b981;
-            --gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--primary);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* PARALLAX BACKGROUNDS */
-        .parallax-section {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-
-        .parallax-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 22, 40, 0.85);
-            z-index: 1;
-        }
-
-        .parallax-section > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* CONTAINERS COM BORDAS FINAS */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .card {
-            background: rgba(26, 42, 68, 0.4);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-        }
-
-        .card:hover {
-            border-color: var(--border-active);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
-        }
-
-        /* HEADER */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(10, 22, 40, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-light);
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 6rem 2rem 4rem;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
-                var(--primary);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem;
-            background: var(--gradient);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: 900;
-            color: white;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .hero-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .meta-item {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .meta-item strong {
-            color: var(--accent-light);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-
-        /* DIAGNÓSTICO */
-        .diagnostico {
-            background: var(--secondary);
-        }
-
-        .diagnostico-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .diagnostico-card {
-            border-left: 3px solid var(--accent);
-            padding: 1.5rem;
-            background: rgba(10, 22, 40, 0.5);
-            border-radius: 0 8px 8px 0;
-            transition: transform 0.3s ease;
-        }
-
-        .diagnostico-card:hover {
-            transform: translateX(8px);
-        }
-
-        .diagnostico-card h3 {
-            color: var(--accent-light);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* CONSULTORIA */
-        .consultoria {
-            background: var(--primary);
-        }
-
-        .consultoria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .consultoria-card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            background: rgba(26, 42, 68, 0.3);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .consultoria-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .consultoria-card:hover::before {
-            left: 100%;
-        }
-
-        .consultoria-card:hover {
-            border-color: var(--border-active);
-            transform: translateY(-4px);
-        }
-
-        .consultoria-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .consultoria-card h3 {
-            margin-bottom: 1rem;
-            color: var(--accent-light);
-        }
-
-        .consultoria-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .consultoria-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text-muted);
-        }
-
-        .consultoria-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        /* PACOTES */
-        .pacotes {
-            background: var(--secondary);
-        }
-
-        .pacotes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            align-items: stretch;
-        }
-
-        .pacote {
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            background: rgba(10, 22, 40, 0.6);
-            position: relative;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pacote:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
-        }
-
-        .pacote.destaque {
-            border-color: var(--accent);
-            background: rgba(59, 130, 246, 0.08);
-            transform: scale(1.02);
-        }
-
-        .pacote.destaque::before {
-            content: 'MAIS RECOMENDADO';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .pacote-nome {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-light);
-        }
-
-        .pacote-desc {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            min-height: 40px;
-        }
-
-        .pacote-preco {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .pacote-preco small {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            -webkit-text-fill-color: var(--text-muted);
-        }
-
-        .pacote-parcela {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .pacote-features {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .pacote-features li {
-            padding: 0.75rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text);
-        }
-
-        .pacote-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        /* DIFERENCIAIS */
-        .diferenciais {
-            background: var(--primary);
-        }
-
-        .diferenciais-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .diferencial {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: all 0.4s ease;
-        }
-
-        .diferencial:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .diferencial-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .diferencial h3 {
-            margin-bottom: 0.5rem;
-            color: var(--accent-light);
-        }
-
-        .diferencial p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* TERMOS */
-        .termos {
-            background: var(--secondary);
-        }
-
-        .termos-content {
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2.5rem;
-            background: rgba(10, 22, 40, 0.5);
-        }
-
-        .termos-content h3 {
-            color: var(--accent-light);
-            margin: 1.5rem 0 0.75rem;
-            font-size: 1.1rem;
-        }
-
-        .termos-content h3:first-child {
-            margin-top: 0;
-        }
-
-        .termos-content p, .termos-content li {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .termos-content ul {
-            padding-left: 1.5rem;
-        }
-
-        /* CTA WHATSAPP */
-        .cta-section {
-            background: 
-                radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-                var(--primary);
-            text-align: center;
-            padding: 6rem 2rem;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: #25d366;
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--primary);
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* ANIMAÇÕES DE ENTRADA */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease;
-        }
-
-        .slide-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease;
-        }
-
-        .slide-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .zoom-in {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.8s ease;
-        }
-
-        .zoom-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-meta {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .pacote.destaque {
-                transform: scale(1);
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#0a1628;--bg2:#122138;--card:rgba(26,42,68,.45);
+--border:rgba(148,163,184,.22);--glow:rgba(59,130,246,.55);
+--blue:#3b82f6;--cyan:#06b6d4;--txt:#e2e8f0;--mut:#94a3b8;
+--orange:#f97316;--orange-h:#fb923c;--ok:#10b981;
+--grad:linear-gradient(135deg,#3b82f6,#06b6d4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.5px}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0;position:relative}
+.parallax{background-attachment:fixed;background-size:cover;background-position:center}
+.parallax::before{content:'';position:absolute;inset:0;background:rgba(10,22,40,.88);z-index:0}
+.parallax>*{position:relative;z-index:1}
+
+/* HEADER + HAMBURGER */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,22,40,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.hdr{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo{font-family:'Space Grotesk';font-size:1.4rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:2px}
+nav ul{display:flex;gap:1.8rem;list-style:none}
+nav a{color:var(--mut);text-decoration:none;font-size:.9rem;transition:.3s}
+nav a:hover{color:var(--cyan)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.burger span{width:26px;height:2px;background:var(--cyan);transition:.3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+.burger{display:flex}
+nav ul{position:fixed;top:64px;right:0;flex-direction:column;background:rgba(10,22,40,.97);width:100%;padding:2rem;gap:1.2rem;transform:translateX(100%);transition:.4s;border-bottom:1px solid var(--border)}
+nav ul.show{transform:translateX(0)}
+}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 4rem;background:radial-gradient(circle at 20% 40%,rgba(59,130,246,.12),transparent 55%),radial-gradient(circle at 80% 75%,rgba(6,182,212,.1),transparent 55%)}
+.hero-logo{width:110px;height:110px;margin:0 auto 1.8rem;border-radius:22px;overflow:hidden;box-shadow:0 12px 45px rgba(59,130,246,.35);border:1px solid var(--border)}
+.hero-logo img{width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.8rem}
+.hero p{color:var(--mut);font-size:1.15rem;max-width:650px;margin:0 auto}
+.meta{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.meta b{display:block;color:var(--cyan);font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem}
+
+/* TÍTULOS DE SEÇÃO */
+.s-title{font-size:2.4rem;text-align:center;margin-bottom:.6rem;color:var(--txt)}
+.s-title span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s-sub{text-align:center;color:var(--mut);margin-bottom:3rem;font-size:1.05rem}
+
+/* CARDS COM GLOW */
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.8rem;backdrop-filter:blur(8px);transition:border-color .35s,box-shadow .35s,transform .35s}
+.card:hover,.card:focus-within{border-color:var(--glow);box-shadow:0 0 22px rgba(59,130,246,.25),inset 0 0 12px rgba(59,130,246,.06);transform:translateY(-4px)}
+.grid{display:grid;gap:1.5rem}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card h3{color:var(--cyan);font-size:1.1rem;margin-bottom:.6rem}
+.card p{color:var(--mut);font-size:.95rem}
+.card ul{list-style:none;margin-top:.8rem}
+.card li{padding:.45rem 0 .45rem 1.6rem;position:relative;color:var(--mut);font-size:.92rem}
+.card li::before{content:'✓';position:absolute;left:0;color:var(--ok);font-weight:700}
+
+/* PACOTES */
+.pacote{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:14px;padding:2.2rem 1.8rem;background:rgba(10,22,40,.6);transition:.35s}
+.pacote:hover{border-color:var(--glow);box-shadow:0 0 28px rgba(59,130,246,.28);transform:translateY(-6px)}
+.pacote.destaque{border-color:var(--orange);background:rgba(249,115,22,.07)}
+.pacote.destaque:hover{box-shadow:0 0 28px rgba(249,115,22,.35)}
+.tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--orange);color:#0a1628;font-weight:700;font-size:.72rem;padding:.3rem 1rem;border-radius:20px;letter-spacing:1px}
+.pacote{position:relative}
+.p-nome{font-family:'Space Grotesk';font-size:1.5rem;color:var(--cyan);margin-bottom:.4rem}
+.p-desc{color:var(--mut);font-size:.88rem;min-height:42px;margin-bottom:1.2rem}
+.p-preco{font-family:'Space Grotesk';font-size:2.4rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.p-preco small{font-size:.85rem;color:var(--mut);-webkit-text-fill-color:var(--mut)}
+.p-parc{color:var(--mut);font-size:.85rem;margin:.4rem 0 1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border)}
+.pacote ul{flex-grow:1}
+
+/* BOTÃO LARANJA */
+.btn-orange{display:block;width:100%;text-align:center;padding:1rem;border-radius:50px;background:var(--orange);color:#0a1628;font-weight:700;font-size:.95rem;text-decoration:none;transition:.3s;border:2px solid var(--orange)}
+.btn-orange:hover,.btn-orange:focus{background:var(--orange-h);box-shadow:0 0 24px rgba(249,115,22,.5);transform:translateY(-3px)}
+
+/* DIFERENCIAIS */
+.dif{text-align:center;padding:2rem 1.2rem;border:1px solid var(--border);border-radius:10px;background:var(--card);transition:.35s}
+.dif:hover{border-color:var(--glow);box-shadow:0 0 18px rgba(59,130,246,.22);transform:translateY(-4px)}
+.dif .ico{font-size:2.2rem;margin-bottom:.8rem}
+.dif h3{color:var(--cyan);margin-bottom:.4rem}
+.dif p{color:var(--mut);font-size:.88rem}
+
+/* TERMOS */
+.termos{max-width:820px;margin:0 auto;border:1px solid var(--border);border-radius:12px;padding:2.4rem;background:rgba(10,22,40,.55);transition:.35s}
+.termos:hover{border-color:var(--glow);box-shadow:0 0 20px rgba(59,130,246,.18)}
+.termos h3{color:var(--cyan);margin:1.4rem 0 .5rem;font-size:1.05rem}
+.termos h3:first-child{margin-top:0}
+.termos p{color:var(--mut);font-size:.92rem}
+
+/* CTA FINAL */
+.cta{text-align:center;background:radial-gradient(circle at 30% 50%,rgba(249,115,22,.1),transparent 55%),radial-gradient(circle at 70% 50%,rgba(59,130,246,.12),transparent 55%)}
+.cta h2{font-size:2.4rem;margin-bottom:.8rem}
+.cta p{color:var(--mut);margin-bottom:2rem;font-size:1.05rem}
+.btn-wa{display:inline-flex;align-items:center;gap:.7rem;background:#25d366;color:#fff;padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-weight:600;transition:.3s;box-shadow:0 10px 30px rgba(37,211,102,.3)}
+.btn-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 38px rgba(37,211,102,.45)}
+
+footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color:var(--mut);font-size:.88rem}
+
+/* ANIMAÇÕES */
+.an{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.an.left{transform:translateX(-50px)}
+.an.right{transform:translateX(50px)}
+.an.zoom{transform:scale(.9)}
+.an.vis{opacity:1;transform:none}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-content">
-            <div class="logo">SIDMARKTING</div>
-            <ul class="nav-links">
-                <li><a href="#diagnostico">Diagnóstico</a></li>
-                <li><a href="#consultoria">Consultoria</a></li>
-                <li><a href="#pacotes">Pacotes</a></li>
-                <li><a href="#termos">Termos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </div>
-    </header>
+<header>
+<div class="container hdr">
+<div class="logo">SIDMARKTING</div>
+<button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+<nav><ul id="menu">
+<li><a href="#diag">Diagnóstico</a></li>
+<li><a href="#cons">Consultoria</a></li>
+<li><a href="#pacotes">Pacotes</a></li>
+<li><a href="#termos">Termos</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul></nav>
+</div>
+</header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-logo">S</div>
-            <h1>Proposta de Desenvolvimento</h1>
-            <p>Estrutura profissional de alta performance para conversão e escalabilidade digital</p>
-            
-            <div class="hero-meta">
-                <div class="meta-item">
-                    <strong>Cliente</strong>
-                    Afrânio Consultor
-                </div>
-                <div class="meta-item">
-                    <strong>Indicação</strong>
-                    Matheus Cristo
-                </div>
-                <div class="meta-item">
-                    <strong>Desenvolvedor</strong>
-                    Sidnei Santos
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+<div>
+<div class="hero-logo"><img src="/favicon-mark.png" alt="SIDMARKTING"></div>
+<h1>Proposta de Desenvolvimento</h1>
+<p>Estrutura profissional de alta performance para conversão e escalabilidade digital</p>
+<div class="meta">
+<div><b>Cliente</b>Afrânio Consultor</div>
+<div><b>Indicação</b>Matheus Cristo</div>
+<div><b>Desenvolvedor</b>Sidnei Santos</div>
+</div>
+</div>
+</section>
 
-    <section class="diagnostico" id="diagnostico">
-        <div class="container">
-            <h2 class="section-title fade-in">Diagnóstico Estratégico</h2>
-            <p class="section-subtitle fade-in">Entendimento completo do seu cenário antes de qualquer linha de código</p>
-            
-            <div class="diagnostico-grid">
-                <div class="diagnostico-card slide-left">
-                    <h3>🎯 Foco em Conversão</h3>
-                    <p>Site estruturado como funil de persuasão, não como vitrine estática. Cada seção conduz o visitante à ação desejada.</p>
-                </div>
-                <div class="diagnostico-card slide-right">
-                    <h3>📱 Mobile First</h3>
-                    <p>Design responsivo otimizado para dispositivos móveis, onde ocorre a maioria das conversões digitais atuais.</p>
-                </div>
-                <div class="diagnostico-card slide-left">
-                    <h3>⚡ Performance</h3>
-                    <p>Carregamento rápido e experiência fluida, essencial para retenção de visitantes e ranqueamento em buscadores.</p>
-                </div>
-                <div class="diagnostico-card slide-right">
-                    <h3>🔒 Conformidade Legal</h3>
-                    <p>Estrutura preparada para LGPD, termos de uso e políticas de privacidade, fundamentais para tráfego pago.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="diag" class="parallax">
+<div class="container">
+<h2 class="s-title an">Diagnóstico <span>Estratégico</span></h2>
+<p class="s-sub an">Entendimento completo do cenário antes de qualquer linha de código</p>
+<div class="grid g4">
+<div class="card an left"><h3>🎯 Foco em Conversão</h3><p>Site estruturado como funil de persuasão. Cada seção conduz o visitante à ação desejada.</p></div>
+<div class="card an right"><h3>📱 Mobile First</h3><p>Design responsivo otimizado para dispositivos móveis, onde ocorre a maioria das conversões.</p></div>
+<div class="card an left"><h3>⚡ Performance</h3><p>Carregamento rápido e experiência fluida, essenciais para retenção e ranqueamento.</p></div>
+<div class="card an right"><h3>🔒 Conformidade</h3><p>Estrutura preparada para LGPD, termos de uso e privacidade, fundamentais para tráfego pago.</p></div>
+</div>
+</div>
+</section>
 
-    <section class="consultoria" id="consultoria">
-        <div class="container">
-            <h2 class="section-title fade-in">Consultoria Estratégica Inclusa</h2>
-            <p class="section-subtitle fade-in">Além do desenvolvimento, orientações cruciais para proteger seu investimento</p>
-            
-            <div class="consultoria-grid">
-                <div class="consultoria-card fade-in">
-                    <div class="consultoria-icon">🛡️</div>
-                    <h3>Blindagem de Marca</h3>
-                    <ul>
-                        <li>Orientação sobre registro de domínio seguro</li>
-                        <li>Evitar uso de marcas registradas de terceiros</li>
-                        <li>Posicionamento como "Parceiro Autorizado"</li>
-                        <li>Proteção contra notificações extrajudiciais</li>
-                    </ul>
-                </div>
-                
-                <div class="consultoria-card fade-in">
-                    <div class="consultoria-icon">⚖️</div>
-                    <h3>Conformidade Jurídica</h3>
-                    <ul>
-                        <li>Estrutura para Política de Privacidade (LGPD)</li>
-                        <li>Termos de Uso e Responsabilidades</li>
-                        <li>Disclaimers sobre projeções e resultados</li>
-                        <li>Recomendação de assessoria jurídica especializada</li>
-                    </ul>
-                </div>
-                
-                <div class="consultoria-card fade-in">
-                    <div class="consultoria-icon">📊</div>
-                    <h3>Otimização para Conversão</h3>
-                    <ul>
-                        <li>Copywriting persuasivo baseado em dados</li>
-                        <li>Posicionamento estratégico de CTAs</li>
-                        <li>Testes A/B de elementos críticos</li>
-                        <li>Análise de métricas pós-lançamento</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="cons">
+<div class="container">
+<h2 class="s-title an">Consultoria <span>Stratégica Inclusa</span></h2>
+<p class="s-sub an">Orientações cruciais para proteger seu investimento</p>
+<div class="grid g3">
+<div class="card an zoom"><h3>🛡️ Blindagem de Marca</h3><ul><li>Orientação sobre registro de domínio seguro</li><li>Evitar uso de marcas de terceiros</li><li>Posicionamento como "Parceiro Autorizado"</li><li>Proteção contra notificações extrajudiciais</li></ul></div>
+<div class="card an zoom"><h3>⚖️ Conformidade Jurídica</h3><ul><li>Estrutura para Política de Privacidade (LGPD)</li><li>Termos de Uso e Responsabilidades</li><li>Disclaimers sobre projeções e resultados</li><li>Recomendação de assessoria jurídica</li></ul></div>
+<div class="card an zoom"><h3>📊 Otimização de Conversão</h3><ul><li>Copywriting persuasivo baseado em dados</li><li>Posicionamento estratégico de CTAs</li><li>Testes A/B de elementos críticos</li><li>Análise de métricas pós-lançamento</li></ul></div>
+</div>
+</div>
+</section>
 
-    <section class="pacotes" id="pacotes">
-        <div class="container">
-            <h2 class="section-title fade-in">Pacotes de Desenvolvimento</h2>
-            <p class="section-subtitle fade-in">Soluções escaláveis para diferentes momentos do seu negócio</p>
-            
-            <div class="pacotes-grid">
-                <div class="pacote fade-in">
-                    <h3 class="pacote-nome">Starter</h3>
-                    <p class="pacote-desc">Ideal para quem está começando e precisa de presença digital profissional</p>
-                    <div class="pacote-preco">R$ 900 <small>à vista</small></div>
-                    <p class="pacote-parcela">ou 2x de R$ 450 sem juros</p>
-                    <ul class="pacote-features">
-                        <li>Landing page one-page</li>
-                        <li>Design responsivo completo</li>
-                        <li>Menu hamburger funcional</li>
-                        <li>Integração com WhatsApp</li>
-                        <li>Favicon personalizado</li>
-                        <li>Deploy e publicação</li>
-                        <li>Suporte por 30 dias</li>
-                    </ul>
-                </div>
+<section id="pacotes" class="parallax">
+<div class="container">
+<h2 class="s-title an">Pacotes de <span>Desenvolvimento</span></h2>
+<p class="s-sub an">Soluções escaláveis para diferentes momentos do seu negócio</p>
+<div class="grid g3">
 
-                <div class="pacote destaque zoom-in">
-                    <h3 class="pacote-nome">Pro</h3>
-                    <p class="pacote-desc">Para quem quer converter de verdade e escalar resultados</p>
-                    <div class="pacote-preco">R$ 2.200 <small>à vista</small></div>
-                    <p class="pacote-parcela">ou 3x de R$ 733 sem juros</p>
-                    <ul class="pacote-features">
-                        <li>Tudo do pacote Starter</li>
-                        <li>Múltiplas seções estratégicas</li>
-                        <li>Transições e animações suaves</li>
-                        <li>Efeitos parallax</li>
-                        <li>Otimização SEO básica</li>
-                        <li>Integração com analytics</li>
-                        <li>Copywriting profissional</li>
-                        <li>Suporte por 60 dias</li>
-                    </ul>
-                </div>
+<div class="pacote an left">
+<h3 class="p-nome">Starter</h3>
+<p class="p-desc">Ideal para quem está começando e precisa de presença digital profissional</p>
+<div class="p-preco">R$ 900 <small>à vista</small></div>
+<p class="p-parc">ou 2x de R$ 450 sem juros</p>
+<ul>
+<li>Landing page one-page</li>
+<li>Design responsivo completo</li>
+<li>Menu hamburger funcional</li>
+<li>Integração com WhatsApp</li>
+<li>Favicon personalizado</li>
+<li>Deploy e publicação</li>
+<li>Suporte por 30 dias</li>
+</ul>
+<a class="btn-orange" href="https://wa.me/5521966053200?text=Ol%C3%A1%20Sidnei%2C%20vim%20pela%20indica%C3%A7%C3%A3o%20do%20Matheus%20Cristo%20e%20gostaria%20de%20aprovar%20o%20pacote%20STARTER%20(R%24900%20%C3%A0%20vista%20ou%202x%20R%24450)." target="_blank">Quero o Starter</a>
+</div>
 
-                <div class="pacote fade-in">
-                    <h3 class="pacote-nome">Enterprise</h3>
-                    <p class="pacote-desc">Para líderes que querem escalar e replicar para sua rede</p>
-                    <div class="pacote-preco">R$ 4.500 <small>à vista</small></div>
-                    <p class="pacote-parcela">ou 4x de R$ 1.125 sem juros</p>
-                    <ul class="pacote-features">
-                        <li>Tudo do pacote Pro</li>
-                        <li>Blog integrado para SEO</li>
-                        <li>Captura de leads (e-mail marketing)</li>
-                        <li>Painel administrativo simples</li>
-                        <li>Template replicável para rede</li>
-                        <li>A/B testing de CTAs</li>
-                        <li>Consultoria estratégica contínua</li>
-                        <li>Suporte por 90 dias</li>
-                    </ul>
-                </div>
-            </div>
+<div class="pacote destaque an zoom">
+<span class="tag">MAIS RECOMENDADO</span>
+<h3 class="p-nome">Pro</h3>
+<p class="p-desc">Para quem quer converter de verdade e escalar resultados</p>
+<div class="p-preco">R$ 2.200 <small>à vista</small></div>
+<p class="p-parc">ou 3x de R$ 733 sem juros</p>
+<ul>
+<li>Tudo do pacote Starter</li>
+<li>Múltiplas seções estratégicas</li>
+<li>Transições e animações suaves</li>
+<li>Efeitos parallax</li>
+<li>Otimização SEO básica</li>
+<li>Integração com analytics</li>
+<li>Copywriting profissional</li>
+<li>Suporte por 60 dias</li>
+</ul>
+<a class="btn-orange" href="https://wa.me/5521966053200?text=Ol%C3%A1%20Sidnei%2C%20vim%20pela%20indica%C3%A7%C3%A3o%20do%20Matheus%20Cristo%20e%20gostaria%20de%20aprovar%20o%20pacote%20PRO%20(R%242.200%20%C3%A0%20vista%20ou%203x%20R%24733)." target="_blank">Quero o Pro</a>
+</div>
 
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; border: 1px solid var(--border); border-radius: 8px; background: rgba(59, 130, 246, 0.05);">
-                <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    <strong style="color: var(--accent-light);">Condição especial:</strong> 
-                    Por indicação de Matheus Cristo, oferecemos parcelamento sem juros em todos os pacotes. 
-                    O investimento se paga com os primeiros resultados do seu projeto.
-                </p>
-            </div>
-        </div>
-    </section>
+<div class="pacote an right">
+<h3 class="p-nome">Enterprise</h3>
+<p class="p-desc">Para líderes que querem escalar e replicar para sua rede</p>
+<div class="p-preco">R$ 4.500 <small>à vista</small></div>
+<p class="p-parc">ou 4x de R$ 1.125 sem juros</p>
+<ul>
+<li>Tudo do pacote Pro</li>
+<li>Blog integrado para SEO</li>
+<li>Captura de leads (e-mail marketing)</li>
+<li>Painel administrativo simples</li>
+<li>Template replicável para rede</li>
+<li>A/B testing de CTAs</li>
+<li>Consultoria estratégica contínua</li>
+<li>Suporte por 90 dias</li>
+</ul>
+<a class="btn-orange" href="https://wa.me/5521966053200?text=Ol%C3%A1%20Sidnei%2C%20vim%20pela%20indica%C3%A7%C3%A3o%20do%20Matheus%20Cristo%20e%20gostaria%20de%20aprovar%20o%20pacote%20ENTERPRISE%20(R%244.500%20%C3%A0%20vista%20ou%204x%20R%241.125)." target="_blank">Quero o Enterprise</a>
+</div>
 
-    <section class="diferenciais">
-        <div class="container">
-            <h2 class="section-title fade-in">Por que SIDMARKTING?</h2>
-            <p class="section-subtitle fade-in">Diferenciais que fazem a diferença no resultado final</p>
-            
-            <div class="diferenciais-grid">
-                <div class="diferencial fade-in">
-                    <div class="diferencial-icon">🎨</div>
-                    <h3>Design Profissional</h3>
-                    <p>Identidade visual coerente e moderna que transmite credibilidade</p>
-                </div>
-                <div class="diferencial fade-in">
-                    <div class="diferencial-icon">⚡</div>
-                    <h3>Alta Performance</h3>
-                    <p>Carregamento rápido e experiência fluida em qualquer dispositivo</p>
-                </div>
-                <div class="diferencial fade-in">
-                    <div class="diferencial-icon">🔧</div>
-                    <h3>Código Limpo</h3>
-                    <p>Desenvolvimento organizado, escalável e fácil de manter</p>
-                </div>
-                <div class="diferencial fade-in">
-                    <div class="diferencial-icon">🤝</div>
-                    <h3>Suporte Dedicado</h3>
-                    <p>Acompanhamento próximo durante e após a entrega do projeto</p>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+<p class="an" style="text-align:center;margin-top:2.5rem;color:var(--mut);font-size:.92rem;border:1px solid var(--border);border-radius:10px;padding:1.2rem;background:rgba(249,115,22,.05)"><b style="color:var(--orange)">Condição especial:</b> por indicação de Matheus Cristo, parcelamento sem juros em todos os pacotes.</p>
+</div>
+</section>
 
-    <section class="termos" id="termos">
-        <div class="container">
-            <h2 class="section-title fade-in">Termos e Responsabilidades</h2>
-            <p class="section-subtitle fade-in">Transparência total sobre o escopo e limites do projeto</p>
-            
-            <div class="termos-content fade-in">
-                <h3>1. Escopo do Desenvolvimento</h3>
-                <p>O desenvolvedor (SIDMARKTING) é responsável pela criação, implementação e publicação do site conforme especificado no pacote contratado. Alterações significativas no escopo após o início do projeto poderão gerar custos adicionais.</p>
+<section>
+<div class="container">
+<h2 class="s-title an">Por que <span>SIDMARKTING?</span></h2>
+<p class="s-sub an">Diferenciais que fazem a diferença no resultado final</p>
+<div class="grid g4">
+<div class="dif an left"><div class="ico">🎨</div><h3>Design Profissional</h3><p>Identidade visual coerente que transmite credibilidade</p></div>
+<div class="dif an right"><div class="ico">⚡</div><h3>Alta Performance</h3><p>Carregamento rápido em qualquer dispositivo</p></div>
+<div class="dif an left"><div class="ico">🔧</div><h3>Código Limpo</h3><p>Desenvolvimento organizado, escalável e fácil de manter</p></div>
+<div class="dif an right"><div class="ico">🤝</div><h3>Suporte Dedicado</h3><p>Acompanhamento próximo durante e após a entrega</p></div>
+</div>
+</div>
+</section>
 
-                <h3>2. Conteúdo e Copywriting</h3>
-                <p>O cliente é responsável por fornecer ou aprovar todo o conteúdo textual, imagens e elementos visuais utilizados no site. O desenvolvedor pode sugerir melhorias de copy, mas a responsabilidade final sobre o conteúdo é do cliente.</p>
+<section id="termos" class="parallax">
+<div class="container">
+<h2 class="s-title an">Termos e <span>Responsabilidades</span></h2>
+<p class="s-sub an">Transparência total sobre o escopo e limites do projeto</p>
+<div class="termos an">
+<h3>1. Escopo do Desenvolvimento</h3><p>O desenvolvedor é responsável pela criação, implementação e publicação do site conforme especificado no pacote contratado. Alterações significativas após o início poderão gerar custos adicionais.</p>
+<h3>2. Conteúdo e Copywriting</h3><p>O cliente é responsável por fornecer ou aprovar todo o conteúdo textual, imagens e elementos visuais. O desenvolvedor pode sugerir melhorias, mas a responsabilidade final é do cliente.</p>
+<h3>3. Conformidade Legal</h3><p>O desenvolvedor implementará a estrutura técnica para conformidade com LGPD e termos legais, mas não se responsabiliza pela redação final de documentos jurídicos. Recomenda-se assessoria jurídica especializada.</p>
+<h3>4. Marcas e Propriedade Intelectual</h3><p>O cliente declara ter autorização para utilizar marcas, logos e conteúdos de terceiros. O desenvolvedor não se responsabiliza por infrações de propriedade intelectual.</p>
+<h3>5. Projeções e Resultados</h3><p>Projeções de resultados ou conversões são estimativas baseadas em dados de mercado e não constituem garantia. O sucesso depende de múltiplos fatores externos ao desenvolvimento.</p>
+<h3>6. Manutenção e Suporte</h3><p>O suporte incluso cobre correções de bugs e ajustes menores. Alterações significativas ou manutenção contínua após o período serão cobradas separadamente.</p>
+<h3>7. Propriedade do Código</h3><p>Após a quitação total, o cliente recebe licença de uso permanente. O desenvolvedor mantém o direito de utilizar o projeto em seu portfólio.</p>
+</div>
+</div>
+</section>
 
-                <h3>3. Conformidade Legal</h3>
-                <p>O desenvolvedor implementará a estrutura técnica para conformidade com LGPD e termos legais, mas não se responsabiliza pela redação final de documentos jurídicos. Recomenda-se assessoria jurídica especializada para revisão de termos, políticas de privacidade e disclaimers.</p>
+<section id="contato" class="cta">
+<div class="container">
+<h2 class="s-title an">Pronto para <span>começar?</span></h2>
+<p class="an">Vamos transformar sua visão em realidade digital.</p>
+<a class="btn-wa an zoom" href="https://wa.me/5521966053200?text=Ol%C3%A1%20Sidnei%2C%20vim%20pela%20indica%C3%A7%C3%A3o%20do%20Matheus%20Cristo%20e%20gostaria%20de%20aprovar%20a%20proposta%20de%20desenvolvimento." target="_blank">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+Aprovar Proposta via WhatsApp</a>
+<p class="an" style="margin-top:1.5rem;color:var(--mut);font-size:.85rem">Resposta em até 2 horas em dias úteis</p>
+</div>
+</section>
 
-                <h3>4. Marcas e Propriedade Intelectual</h3>
-                <p>O cliente declara ter autorização para utilizar marcas, logos e conteúdos de terceiros em seu site. O desenvolvedor não se responsabiliza por infrações de propriedade intelectual cometidas pelo cliente.</p>
+<footer><div class="container"><p><b>SIDMARKTING</b> — Desenvolvimento Web de Alta Performance</p><p>© 2026 Sidnei Santos. Todos os direitos reservados.</p></div></footer>
 
-                <h3>5. Projeções e Resultados</h3>
-                <p>Quaisquer projeções de resultados, ganhos ou conversões apresentadas durante o desenvolvimento são estimativas baseadas em dados de mercado e não constituem garantia de resultados. O sucesso do projeto depende de múltiplos fatores externos ao desenvolvimento.</p>
-
-                <h3>6. Manutenção e Suporte</h3>
-                <p>O período de suporte incluso no pacote cobre correções de bugs e ajustes menores. Alterações significativas de design, funcionalidades adicionais ou manutenção contínua após o período de suporte serão cobradas separadamente.</p>
-
-                <h3>7. Propriedade do Código</h3>
-                <p>Após a quitação total do projeto, o cliente recebe licença de uso permanente do site desenvolvido. O desenvolvedor mantém o direito de utilizar o projeto como parte de seu portfólio profissional.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="contato">
-        <div class="container">
-            <h2 class="fade-in">Pronto para começar?</h2>
-            <p class="fade-in">Vamos transformar sua visão em realidade digital. Clique abaixo e fale diretamente comigo.</p>
-            
-            <a href="https://wa.me/5521966053200?text=Ol%C3%A1%20Sidnei%2C%20vim%20pela%20indica%C3%A7%C3%A3o%20do%20Matheus%20Cristo%20e%20gostaria%20de%20aprovar%20a%20proposta%20de%20desenvolvimento%20de%20site." 
-               class="btn-whatsapp fade-in" 
-               target="_blank">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Aprovar Proposta via WhatsApp
-            </a>
-            
-            <p style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
-                Resposta em até 2 horas em dias úteis
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p><strong>SIDMARKTING</strong> — Desenvolvimento Web de Alta Performance</p>
-            <p style="margin-top: 0.5rem;">© 2026 Sidnei Santos. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Intersection Observer para animações de entrada
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in, .slide-left, .slide-right, .zoom-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll para links de navegação
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+<script>
+const b=document.getElementById('burger'),m=document.getElementById('menu');
+b.addEventListener('click',()=>{b.classList.toggle('open');m.classList.toggle('show')});
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{b.classList.remove('open');m.classList.remove('show')}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.an').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
